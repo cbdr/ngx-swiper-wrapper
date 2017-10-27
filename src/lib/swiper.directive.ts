@@ -1,5 +1,3 @@
-import * as Swiper from 'swiper';
-
 import { NgZone, SimpleChanges, KeyValueDiffers } from '@angular/core';
 import { Directive, Optional, OnInit, DoCheck, OnDestroy, OnChanges } from '@angular/core';
 import { Input, HostBinding, Output, EventEmitter, ElementRef } from '@angular/core';
@@ -135,30 +133,32 @@ export class SwiperDirective implements OnInit, DoCheck, OnDestroy, OnChanges {
       options.nextButton = element.querySelector(options.nextButton);
     }
 
-    if (this.runInsideAngular) {
-      this.swiper = new Swiper(element, options);
-    } else {
-      this.zone.runOutsideAngular(() => {
+    import(/* webpackChunkName: swiper */ 'swiper').then(Swiper => {
+      if (this.runInsideAngular) {
         this.swiper = new Swiper(element, options);
-      });
-    }
+      } else {
+        this.zone.runOutsideAngular(() => {
+          this.swiper = new Swiper(element, options);
+        });
+      }
 
-    this.S_INIT.emit(this.swiper);
+      this.S_INIT.emit(this.swiper);
 
-    // Add native swiper event handling
-    SwiperEvents.forEach((eventName) => {
-      eventName = eventName.replace('swiper', '');
+      // Add native swiper event handling
+      SwiperEvents.forEach((eventName) => {
+        eventName = eventName.replace('swiper', '');
 
-      eventName = eventName.charAt(0).toLowerCase() + eventName.slice(1);
+        eventName = eventName.charAt(0).toLowerCase() + eventName.slice(1);
 
-      this.swiper.on(eventName, (...args) => {
-        if (args.length === 1) {
-          args = args[0];
-        }
+        this.swiper.on(eventName, (...args) => {
+          if (args.length === 1) {
+            args = args[0];
+          }
 
-        if (this[`S_${eventName.toUpperCase()}`]) {
-          this[`S_${eventName.toUpperCase()}`].emit(args);
-        }
+          if (this[`S_${eventName.toUpperCase()}`]) {
+            this[`S_${eventName.toUpperCase()}`].emit(args);
+          }
+        });
       });
     });
 
