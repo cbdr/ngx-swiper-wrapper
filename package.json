@@ -1,73 +1,12 @@
 {
-  "name": "ngx-swiper-wrapper",
-  "description": "Angular wrapper library for Swiper",
-  "bugs": "https://github.com/zefoy/ngx-swiper-wrapper/issues",
-  "license": "MIT",
-  "version": "4.6.6",
-  "main": "bundles/ngx-swiper-wrapper.umd.js",
-  "module": "./dist/index.js",
-  "typings": "./dist/index.d.ts",
-  "tslint": {
-    "extends": "./tslint.json"
-  },
-  "stylelint": {
-    "extends": "./stylelint.json"
-  },
-  "scripts": {
-    "init": "npm install",
-    "start": "npm run build",
-    "watch": "watch 'npm run build' src/",
-    "clean": "rm -rf dist bundles node_modules",
-    "lint": "npm run lint:js && npm run lint:scss",
-    "build": "npm run build:umd && npm run build:aot",
-    "deploy": "npm run build && npm run inline && npm publish",
-    "inline": "ng2-inline --compress -b dist/lib/ -o ./ 'dist/lib/*.js'",
-    "lint:ts": "tslint 'src/**/*.ts'",
-    "lint:scss": "stylelint 'src/**/*.scss' --syntax scss",
-    "build:js": "ngc -p src/tsconfig.json",
-    "build:css": "node-sass src/ -o dist/ --source-map=true",
-    "build:html": "cpx src/lib/*.html dist/lib/",
-    "build:umd": "webpack --config config/webpack.config.js",
-    "build:aot": "npm run build:js && npm run build:css && npm run build:html"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/zefoy/ngx-swiper-wrapper.git"
-  },
-  "dependencies": {
-    "swiper": "^3.0.0"
-  },
-  "devDependencies": {
-    "@angular/common": "^4.0.0",
-    "@angular/compiler": "^4.0.0",
-    "@angular/compiler-cli": "^4.0.0",
-    "@angular/core": "^4.0.0",
-    "@angular/platform-browser": "^4.0.0",
-    "@types/node": "~6.0.0",
-    "@types/swiper": "~2.0.0",
-    "angular2-inline-template-style": "~1.0.0",
-    "angular2-template-loader": "~0.6.0",
-    "awesome-typescript-loader": "~3.2.0",
-    "codelyzer": "~3.1.0",
-    "core-js": "~2.4.0",
-    "cpx": "~1.5.0",
-    "node-sass": "~4.5.0",
-    "raw-loader": "~0.5.0",
-    "rxjs": "~5.4.0",
-    "sass-loader": "~6.0.0",
-    "string-replace-loader": "~1.1.0",
-    "strip-sourcemap-loader": "~0.0.0",
-    "stylelint": "~8.0.0",
-    "stylelint-config-standard": "~17.0.0",
-    "stylelint-order": "~0.6.0",
-    "tslint": "~5.6.0",
-    "typescript": "~2.4.0",
-    "watch": "~1.0.0",
-    "webpack": "~2.6.0",
-    "zone.js": "~0.8.0"
-  },
-  "peerDependencies": {
-    "@angular/common": ">=2.0.0",
-    "@angular/core": ">=2.0.0"
-  }
+	"main": "index.js",
+	"version": "4.6.6",
+	"license": "MIT",
+	"name": "ngx-swiper-wrapper",
+	"peerDependencies": {
+		"@angular/common": ">=4.0.0",
+		"@angular/core": ">=4.0.0"
+	},
+	"module": "index.js",
+	"_id": "ngx-swiper-wrapper@"
 }

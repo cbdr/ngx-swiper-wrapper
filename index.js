@@ -1,0 +1,2 @@
+export { SwiperComponent, SwiperDirective, coverflowObject, cubeObject, fadeObject, flipObject, SwiperConfig, SwiperEvents, provideDefaultConfig, provideForRootGuard, SWIPER_CONFIG, SWIPER_GUARD, SwiperModule } from './lib/index';
+//# sourceMappingURL=index.js.map
