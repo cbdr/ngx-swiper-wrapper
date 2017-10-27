@@ -1,31 +1,29 @@
 {
   "compilerOptions": {
-    "declaration": true,
+    "baseUrl": ".",
+    "outDir": "../dist",
+    "target": "es5",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "lib": ["dom", "es7"],
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "inlineSources": true,
-    "lib": ["dom", "es2015"],
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "outDir": "../dist",
     "sourceMap": true,
-    "target": "es5",
+    "inlineSources": true,
+    "declaration": true,
+    "allowSyntheticDefaultImports": true,
     "typeRoots": [
       "../node_modules/@types"
-    ],
-    "types": [
-      "node"
     ]
   },
-  "files": [
-    "index.ts",
-    "lib/swiper.module.ts",
-    "lib/swiper.component.ts",
-    "lib/swiper.directive.ts",
-    "lib/swiper.interfaces.ts"
+  "exclude": [
+    "**/*.spec.ts",
+    "../node_modules"
   ],
   "angularCompilerOptions": {
-    "skipMetadataEmit" : false,
+    "annotateForClosureCompiler": true,
+    "genDir": "../temp/factories",
+    "strictMetadataEmit": true,
     "skipTemplateCodegen": true
   },
   "awesomeTypescriptLoaderOptions": {

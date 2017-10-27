@@ -1,0 +1,9 @@
+{
+  "name": "ngx-swiper-wrapper",
+  "peerDependencies": {
+    "@angular/common": "*",
+    "@angular/core": "*"
+  },
+  "main": "index.js",
+  "module": "index.js"
+}

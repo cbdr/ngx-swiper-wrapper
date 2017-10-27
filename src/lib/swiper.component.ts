@@ -8,7 +8,7 @@ import { SwiperConfig, SwiperConfigInterface } from './swiper.interfaces';
 @Component({
   selector: 'swiper',
   templateUrl: './swiper.component.html',
-  styleUrls: ['./swiper.component.css'],
+  styleUrls: ['./swiper.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 export class SwiperComponent implements OnInit, OnDestroy {
